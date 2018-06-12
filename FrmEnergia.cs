@@ -160,12 +160,11 @@ namespace Energia_Cinética
 
         private void btnCredits_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Giovane Matheus Kayser Fernandes lindo gostoso", "Credits");
+            MessageBox.Show("Giovane Matheus Kayser Fernandes", "Credits");
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Segundo esse programa ARROZ È DIVINO");
         }
     }
 }
