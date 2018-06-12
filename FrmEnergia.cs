@@ -30,12 +30,21 @@ namespace Energia_Cinética
         {
             Decimal Massa, Velocidade, Energia;
 
-            Massa = Convert.ToDecimal(txtMassa.Text);
-            Velocidade = Convert.ToDecimal(txtVelocidade.Text);
-            
 
-            Decimal Resultado =((Massa * (Velocidade*Velocidade))*1/2);
-            txtEnergiaC.Text = Resultado.ToString();
+            if (txtMassa.Text == string.Empty || txtVelocidade.Text == string.Empty)
+            {
+                MessageBox.Show("Massa ou Velocidade está Vazio!", "Erro");
+            }
+
+            else
+            {
+                Massa = Convert.ToDecimal(txtMassa.Text);
+                Velocidade = Convert.ToDecimal(txtVelocidade.Text);
+
+                Decimal Resultado = ((Massa * (Velocidade * Velocidade)) * 1 / 2);
+                txtEnergiaC.Text = Resultado.ToString();
+            }
+
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -119,8 +128,8 @@ namespace Energia_Cinética
         {
             gbMassa.Show();
             gbVelocidade.Hide();
+            gbEnergia.Hide();
 
-           
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -132,7 +141,31 @@ namespace Energia_Cinética
         {
             gbMassa.Hide();
             gbVelocidade.Show();
+            gbEnergia.Hide();
 
+        }
+
+        private void groupBox2_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHelpEnergia_Click(object sender, EventArgs e)
+        {
+            gbEnergia.Show();
+            gbMassa.Hide();
+            gbVelocidade.Hide();
+            
+        }
+
+        private void btnCredits_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Giovane Matheus Kayser Fernandes lindo gostoso", "Credits");
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Segundo esse programa ARROZ È DIVINO");
         }
     }
 }
