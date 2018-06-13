@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Energia_Cinética
 {
     public partial class FrmEnergia : Form
@@ -29,27 +30,46 @@ namespace Energia_Cinética
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             Decimal Massa, Velocidade, Energia;
+            String Calculo;
+            Decimal i;
 
-
-            if (txtMassa.Text == string.Empty || txtVelocidade.Text == string.Empty)
+            
+            if (Decimal.TryParse(txtMassa.Text, out i))     //verificar se o txtMassa é um número decimal
             {
-                MessageBox.Show("Massa ou Velocidade está Vazio!", "Erro");
+                if (Decimal.TryParse(txtVelocidade.Text, out i))   //verificar se o txtVelocidade é um número
+                {
+
+                    Velocidade = Convert.ToDecimal(txtVelocidade.Text);       
+
+                    Massa = Convert.ToDecimal(txtMassa.Text);
+
+                    Decimal Resultado = ((Massa * (Velocidade * Velocidade)) * 1 / 2);      //Realização a equação
+                    txtEnergiaC.Text = Resultado.ToString();                                //Recebe a string Resultado na txtEnergiaC
+
+                    Calculo = Convert.ToString(lblCalculo.Text);
+                    lblCalculo.Text = ("Massa = " + Massa + "\nVelocidade = " + Velocidade + "\n   A formula de energia cinética é (Velocidade² * Massa) * 1/2 \n   Então para descobrir a energia cinética, colocamos os dados na formula" + "\n(" + Velocidade + "² *" + Massa + ") * 1/2" + "\n   Resolveremos primeiro o que esta em parentes\n(" + Velocidade * Velocidade + "+" + Massa + ") * 1/2" + "\n" + Velocidade * Velocidade * Massa + " * 1/2" + "\n   Agora multiplicamos por 1/2" + "\n" + "   A energia cinética deu " + Resultado + " J");  // Criar uma Label capaz de mostra ao usuário como é feito a equãção
+                }
+                else {
+
+                    MessageBox.Show("Insira os valores da Velocidade\nApenas números", "Erro");  //Msgbox caso a txtVelocidade não seja um numero
+
+                }
             }
+            
+
 
             else
             {
-                Massa = Convert.ToDecimal(txtMassa.Text);
-                Velocidade = Convert.ToDecimal(txtVelocidade.Text);
-
-                Decimal Resultado = ((Massa * (Velocidade * Velocidade)) * 1 / 2);
-                txtEnergiaC.Text = Resultado.ToString();
+                MessageBox.Show("Insira os valores da Massa\nApenas números", "Erro");  //Msgbox caso a txtMassa não seja um número
             }
+
+            
 
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            Close();
+            Close();  //botão de fechar
         }
 
         private void fileSystemWatcher1_Changed(object sender, System.IO.FileSystemEventArgs e)
@@ -59,7 +79,7 @@ namespace Energia_Cinética
 
         private void btnDesenhar_Click(object sender, EventArgs e)
         {
-            Desenho desenho = new Desenho();
+            Desenho desenho = new Desenho();  //ainda sem função
             desenho.Show();
         }
 
@@ -80,7 +100,7 @@ namespace Energia_Cinética
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;  //minimiza a tela
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -103,7 +123,7 @@ namespace Energia_Cinética
             Arrastando = true;
         }
 
-        private void FrmEnergia_MouseUp(object sender, MouseEventArgs e)
+        private void FrmEnergia_MouseUp(object sender, MouseEventArgs e)    //Função de arrastar a tela usando a Form
         {
             Arrastando = false;
             ArrastarCursor = Cursor.Position;
@@ -124,7 +144,7 @@ namespace Energia_Cinética
 
         }
 
-        private void btnHelpMassa_Click(object sender, EventArgs e)
+        private void btnHelpMassa_Click(object sender, EventArgs e)  //Deixa visivel a label selecionada e deixa invisivel as nao selecionadas
         {
             gbMassa.Show();
             gbVelocidade.Hide();
@@ -160,12 +180,17 @@ namespace Energia_Cinética
 
         private void btnCredits_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Giovane Matheus Kayser Fernandes lindo gostoso", "Credits");
+            MessageBox.Show("Giovane Matheus Kayser Fernandes", "Credits");  //EU
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Segundo esse programa ARROZ È DIVINO");
+            
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
