@@ -60,6 +60,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnCredits = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Força = new System.Windows.Forms.TextBox();
+            this.txtGravidade = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,7 +104,9 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.btnDesenhar);
             this.tabPage1.Controls.Add(this.txtMassa);
+            this.tabPage1.Controls.Add(this.txtGravidade);
             this.tabPage1.Controls.Add(this.txtVelocidade);
+            this.tabPage1.Controls.Add(this.Força);
             this.tabPage1.Controls.Add(this.txtEnergiaC);
             this.tabPage1.Controls.Add(this.btnFechar);
             this.tabPage1.Controls.Add(this.btnCalcular);
@@ -212,8 +220,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnHelpEnergia);
             this.groupBox1.Controls.Add(this.btnHelpVelocidade);
             this.groupBox1.Controls.Add(this.btnHelpMassa);
@@ -221,7 +233,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(195, 130);
+            this.groupBox1.Size = new System.Drawing.Size(195, 204);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados";
@@ -321,7 +333,7 @@
             this.btnDesenhar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.btnDesenhar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnDesenhar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesenhar.Location = new System.Drawing.Point(16, 142);
+            this.btnDesenhar.Location = new System.Drawing.Point(17, 245);
             this.btnDesenhar.Name = "btnDesenhar";
             this.btnDesenhar.Size = new System.Drawing.Size(125, 23);
             this.btnDesenhar.TabIndex = 3;
@@ -339,7 +351,7 @@
             // 
             // txtVelocidade
             // 
-            this.txtVelocidade.Location = new System.Drawing.Point(207, 73);
+            this.txtVelocidade.Location = new System.Drawing.Point(207, 76);
             this.txtVelocidade.Name = "txtVelocidade";
             this.txtVelocidade.Size = new System.Drawing.Size(178, 20);
             this.txtVelocidade.TabIndex = 1;
@@ -359,7 +371,7 @@
             this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Location = new System.Drawing.Point(251, 142);
+            this.btnFechar.Location = new System.Drawing.Point(252, 245);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 23);
             this.btnFechar.TabIndex = 2;
@@ -375,7 +387,7 @@
             this.btnCalcular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCalcular.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalcular.Location = new System.Drawing.Point(148, 142);
+            this.btnCalcular.Location = new System.Drawing.Point(149, 245);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
             this.btnCalcular.TabIndex = 2;
@@ -466,6 +478,76 @@
             this.panel1.Size = new System.Drawing.Size(828, 1);
             this.panel1.TabIndex = 7;
             // 
+            // Força
+            // 
+            this.Força.Location = new System.Drawing.Point(207, 179);
+            this.Força.Name = "Força";
+            this.Força.Size = new System.Drawing.Size(178, 20);
+            this.Força.TabIndex = 1;
+            // 
+            // txtGravidade
+            // 
+            this.txtGravidade.Location = new System.Drawing.Point(207, 144);
+            this.txtGravidade.Name = "txtGravidade";
+            this.txtGravidade.Size = new System.Drawing.Size(178, 20);
+            this.txtGravidade.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(49, 138);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 20);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Gravidade";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(49, 173);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(129, 20);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Energia Cinética:";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(10, 135);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "?";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnHelpVelocidade_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(10, 170);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(34, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "?";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnHelpEnergia_Click);
+            // 
             // FrmEnergia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -537,6 +619,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblCalculo;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtGravidade;
+        private System.Windows.Forms.TextBox Força;
     }
 }
 
