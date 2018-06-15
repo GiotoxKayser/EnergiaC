@@ -32,37 +32,41 @@ namespace Energia_Cinética
             Decimal Massa, Velocidade, Energia;
             String Calculo;
             Decimal i;
-
-            
-            if (Decimal.TryParse(txtMassa.Text, out i))     //verificar se o txtMassa é um número decimal
+            if (txtMassa.Text == String.Empty)
             {
-                if (Decimal.TryParse(txtVelocidade.Text, out i))   //verificar se o txtVelocidade é um número
+                MessageBox.Show("Insira os valores da Massa\n", "Erro");
+            }
+            else {
+                if (Decimal.TryParse(txtMassa.Text, out i))     //verificar se o txtMassa é um número decimal
                 {
 
-                    Velocidade = Convert.ToDecimal(txtVelocidade.Text);       
+                    if (Decimal.TryParse(txtVelocidade.Text, out i))   //verificar se o txtVelocidade é um número
+                    {
 
-                    Massa = Convert.ToDecimal(txtMassa.Text);
+                        Velocidade = Convert.ToDecimal(txtVelocidade.Text);
 
-                    Decimal Resultado = ((Massa * (Velocidade * Velocidade)) * 1 / 2);      //Realização a equação
-                    txtEnergiaC.Text = Resultado.ToString();                                //Recebe a string Resultado na txtEnergiaC
+                        Massa = Convert.ToDecimal(txtMassa.Text);
 
-                    Calculo = Convert.ToString(lblCalculo.Text);
-                    lblCalculo.Text = ("Massa = " + Massa + "\nVelocidade = " + Velocidade + "\n   A formula de energia cinética é (Velocidade² * Massa) * 1/2 \n   Então para descobrir a energia cinética, colocamos os dados na formula" + "\n(" + Velocidade + "² *" + Massa + ") * 1/2" + "\n   Resolveremos primeiro o que esta em parentes\n(" + Velocidade * Velocidade + "+" + Massa + ") * 1/2" + "\n" + Velocidade * Velocidade * Massa + " * 1/2" + "\n   Agora multiplicamos por 1/2" + "\n" + "   A energia cinética deu " + Resultado + " J");  // Criar uma Label capaz de mostra ao usuário como é feito a equãção
+                        Decimal Resultado = ((Massa * (Velocidade * Velocidade)) * 1 / 2);      //Realização a equação
+                        txtEnergiaC.Text = Resultado.ToString();                                //Recebe a string Resultado na txtEnergiaC
+
+                        Calculo = Convert.ToString(lblCalculo.Text);
+                        lblCalculo.Text = ("Massa = " + Massa + "\nVelocidade = " + Velocidade + "\n   A formula de energia cinética é (Velocidade² * Massa) * 1/2 \n   Então para descobrir a energia cinética, colocamos os dados na formula" + "\n(" + Velocidade + "² *" + Massa + ") * 1/2" + "\n   Resolveremos primeiro o que esta em parentes\n(" + Velocidade * Velocidade + "+" + Massa + ") * 1/2" + "\n" + Velocidade * Velocidade * Massa + " * 1/2" + "\n   Agora multiplicamos por 1/2" + "\n" + "   A energia cinética deu " + Resultado + " J");  // Criar uma Label capaz de mostra ao usuário como é feito a equãção
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Insira os valores da Velocidade\nApenas números", "Erro");  //Msgbox caso a txtVelocidade não seja um numero
+
+                    }
                 }
                 else {
-
-                    MessageBox.Show("Insira os valores da Velocidade\nApenas números", "Erro");  //Msgbox caso a txtVelocidade não seja um numero
-
+                    MessageBox.Show("Apenas números", "Erro");
                 }
+
             }
+
             
-
-
-            else
-            {
-                MessageBox.Show("Insira os valores da Massa\nApenas números", "Erro");  //Msgbox caso a txtMassa não seja um número
-            }
-
             
 
         }

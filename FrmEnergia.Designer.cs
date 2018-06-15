@@ -438,7 +438,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(212, 24);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Energia Cinética 1.03.1v";
+            this.label4.Text = "Energia Cinética 1.04.1v";
             // 
             // btnCredits
             // 
