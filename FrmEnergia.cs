@@ -29,7 +29,8 @@ namespace Energia_Cinética
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            Decimal Massa, Velocidade, Energia;
+            Decimal Massa, Velocidade, Energia;     //Define as seguintes variaveis em decimal
+
             String Calculo;
             Decimal i;
             if (txtMassa.Text == String.Empty)
@@ -166,6 +167,7 @@ namespace Energia_Cinética
             gbMassa.Hide();
             gbVelocidade.Show();
             gbEnergia.Hide();
+            
 
         }
 
@@ -193,6 +195,21 @@ namespace Energia_Cinética
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNumero3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabEnergia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }
