@@ -32,12 +32,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEnergia));
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.gbMassaCorpos = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtDistancia = new System.Windows.Forms.TextBox();
-            this.txtGravidade = new System.Windows.Forms.TextBox();
-            this.txtMassa1 = new System.Windows.Forms.TextBox();
-            this.txtMassa2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnCalculo2 = new System.Windows.Forms.Button();
+            this.txtMassa2 = new System.Windows.Forms.TextBox();
+            this.txtDistancia = new System.Windows.Forms.TextBox();
+            this.txtForcaG = new System.Windows.Forms.TextBox();
+            this.txtMassa1 = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabEnergia = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblCalculo = new System.Windows.Forms.Label();
@@ -66,18 +76,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnCredits = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.gbMassaCorpos = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.gbMassaCorpos.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabEnergia.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbVelocidade.SuspendLayout();
@@ -85,9 +88,6 @@
             this.gbEnergia.SuspendLayout();
             this.gbMassa.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.gbMassaCorpos.SuspendLayout();
             this.SuspendLayout();
             // 
             // fileSystemWatcher1
@@ -101,20 +101,130 @@
             this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.gbMassaCorpos);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.btnCalculo2);
             this.tabPage2.Controls.Add(this.txtMassa2);
             this.tabPage2.Controls.Add(this.txtDistancia);
-            this.tabPage2.Controls.Add(this.txtGravidade);
+            this.tabPage2.Controls.Add(this.txtForcaG);
             this.tabPage2.Controls.Add(this.txtMassa1);
+            this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.ImageIndex = 2;
             this.tabPage2.Location = new System.Drawing.Point(4, 71);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(824, 409);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Exercicios";
+            this.tabPage2.Text = "Força Gravitacional";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // gbMassaCorpos
+            // 
+            this.gbMassaCorpos.Controls.Add(this.label12);
+            this.gbMassaCorpos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMassaCorpos.Location = new System.Drawing.Point(388, 11);
+            this.gbMassaCorpos.Name = "gbMassaCorpos";
+            this.gbMassaCorpos.Size = new System.Drawing.Size(372, 145);
+            this.gbMassaCorpos.TabIndex = 12;
+            this.gbMassaCorpos.TabStop = false;
+            this.gbMassaCorpos.Text = "Massa dos Corpos ";
+            this.gbMassaCorpos.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(26, 34);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(296, 100);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "- Velocidade é a media do deslocamento\r\n em kilometros por hora\r\n- V = (Xf - Xi )" +
+    "/ t\r\n        Por exemplo:\r\n        Velocidade de um carro = 70 k/h";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(245, 163);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Força Gravitacional ";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(6, 25);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(34, 52);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "?";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(6, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "?";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(6, 92);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(34, 23);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "?";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(49, 127);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(150, 20);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Força gravitacional :";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(46, 92);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(197, 20);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Distancia entre os corpos :";
             // 
             // label8
             // 
@@ -126,33 +236,15 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Massa do primeiro corpo:";
             // 
-            // txtDistancia
+            // label9
             // 
-            this.txtDistancia.Location = new System.Drawing.Point(257, 133);
-            this.txtDistancia.Name = "txtDistancia";
-            this.txtDistancia.Size = new System.Drawing.Size(100, 20);
-            this.txtDistancia.TabIndex = 1;
-            // 
-            // txtGravidade
-            // 
-            this.txtGravidade.Location = new System.Drawing.Point(257, 98);
-            this.txtGravidade.Name = "txtGravidade";
-            this.txtGravidade.Size = new System.Drawing.Size(100, 20);
-            this.txtGravidade.TabIndex = 1;
-            // 
-            // txtMassa1
-            // 
-            this.txtMassa1.Location = new System.Drawing.Point(257, 26);
-            this.txtMassa1.Name = "txtMassa1";
-            this.txtMassa1.Size = new System.Drawing.Size(100, 20);
-            this.txtMassa1.TabIndex = 1;
-            // 
-            // txtMassa2
-            // 
-            this.txtMassa2.Location = new System.Drawing.Point(257, 63);
-            this.txtMassa2.Name = "txtMassa2";
-            this.txtMassa2.Size = new System.Drawing.Size(100, 20);
-            this.txtMassa2.TabIndex = 1;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(46, 57);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(192, 20);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Massa do segundo corpo:";
             // 
             // btnCalculo2
             // 
@@ -161,13 +253,51 @@
             this.btnCalculo2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnCalculo2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalculo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCalculo2.Location = new System.Drawing.Point(257, 159);
+            this.btnCalculo2.Location = new System.Drawing.Point(255, 161);
             this.btnCalculo2.Name = "btnCalculo2";
             this.btnCalculo2.Size = new System.Drawing.Size(100, 27);
             this.btnCalculo2.TabIndex = 0;
             this.btnCalculo2.Text = "Calcular";
             this.btnCalculo2.UseVisualStyleBackColor = true;
             this.btnCalculo2.Click += new System.EventHandler(this.btnNumero3_Click);
+            // 
+            // txtMassa2
+            // 
+            this.txtMassa2.Location = new System.Drawing.Point(257, 63);
+            this.txtMassa2.Name = "txtMassa2";
+            this.txtMassa2.Size = new System.Drawing.Size(100, 20);
+            this.txtMassa2.TabIndex = 1;
+            // 
+            // txtDistancia
+            // 
+            this.txtDistancia.Location = new System.Drawing.Point(255, 101);
+            this.txtDistancia.Name = "txtDistancia";
+            this.txtDistancia.Size = new System.Drawing.Size(100, 20);
+            this.txtDistancia.TabIndex = 1;
+            // 
+            // txtForcaG
+            // 
+            this.txtForcaG.Location = new System.Drawing.Point(255, 135);
+            this.txtForcaG.Name = "txtForcaG";
+            this.txtForcaG.Size = new System.Drawing.Size(100, 20);
+            this.txtForcaG.TabIndex = 1;
+            // 
+            // txtMassa1
+            // 
+            this.txtMassa1.Location = new System.Drawing.Point(257, 26);
+            this.txtMassa1.Name = "txtMassa1";
+            this.txtMassa1.Size = new System.Drawing.Size(100, 20);
+            this.txtMassa1.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(636, 255);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(143, 134);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // tabEnergia
             // 
@@ -529,136 +659,6 @@
             this.panel1.Size = new System.Drawing.Size(828, 1);
             this.panel1.TabIndex = 7;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(46, 57);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(192, 20);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Massa do segundo corpo:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(46, 92);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(197, 20);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Distancia entre os corpos :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(49, 127);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(150, 20);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Força gravitacional :";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(636, 255);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(143, 134);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(6, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(34, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "?";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(6, 92);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(34, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "?";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(6, 25);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(34, 52);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "?";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(245, 163);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Força Gravitacional ";
-            // 
-            // gbMassaCorpos
-            // 
-            this.gbMassaCorpos.Controls.Add(this.label12);
-            this.gbMassaCorpos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMassaCorpos.Location = new System.Drawing.Point(388, 11);
-            this.gbMassaCorpos.Name = "gbMassaCorpos";
-            this.gbMassaCorpos.Size = new System.Drawing.Size(372, 145);
-            this.gbMassaCorpos.TabIndex = 12;
-            this.gbMassaCorpos.TabStop = false;
-            this.gbMassaCorpos.Text = "Massa dos Corpos ";
-            this.gbMassaCorpos.Visible = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 34);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(296, 100);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "- Velocidade é a media do deslocamento\r\n em kilometros por hora\r\n- V = (Xf - Xi )" +
-    "/ t\r\n        Por exemplo:\r\n        Velocidade de um carro = 70 k/h";
-            // 
             // FrmEnergia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -683,6 +683,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.gbMassaCorpos.ResumeLayout(false);
+            this.gbMassaCorpos.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabEnergia.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -695,11 +700,6 @@
             this.gbMassa.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.gbMassaCorpos.ResumeLayout(false);
-            this.gbMassaCorpos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -739,7 +739,7 @@
         private System.Windows.Forms.TextBox txtMassa1;
         private System.Windows.Forms.TextBox txtMassa2;
         private System.Windows.Forms.Button btnCalculo2;
-        private System.Windows.Forms.TextBox txtGravidade;
+        private System.Windows.Forms.TextBox txtForcaG;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDistancia;
         private System.Windows.Forms.PictureBox pictureBox2;

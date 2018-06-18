@@ -29,7 +29,7 @@ namespace Energia_Cinética
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            Decimal Massa, Velocidade, Energia;     //Define as seguintes variaveis em decimal
+            Decimal Massa, Velocidade;     //Define as seguintes variaveis em decimal
 
             String Calculo;
             Decimal i;
@@ -201,7 +201,22 @@ namespace Energia_Cinética
 
         private void btnNumero3_Click(object sender, EventArgs e)
         {
-            
+            Decimal Massa1, Massa2, Distancia, ForcaG, Forca;
+
+        
+            Massa1 = Convert.ToDecimal(txtMassa1.Text);
+            Massa2 = Convert.ToDecimal(txtMassa2.Text);
+            Distancia = Convert.ToDecimal(txtDistancia.Text);
+
+           
+            Double potencia = Math.Pow(10, 8);
+
+            Decimal dec = Decimal.ToInt32((decimal)potencia);
+            Forca = ((decimal)6.67) * (10 / dec);
+            ForcaG = Forca * (Massa1 * Massa2) / Distancia;
+            txtForcaG.Text = ForcaG.ToString();
+
+
         }
 
         private void tabEnergia_SelectedIndexChanged(object sender, EventArgs e)
