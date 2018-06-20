@@ -154,7 +154,7 @@ namespace Energia_Cinética
             gbMassa.Show();
             gbVelocidade.Hide();
             gbEnergia.Hide();
-
+            gbExemplo1.Hide();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -167,7 +167,9 @@ namespace Energia_Cinética
             gbMassa.Hide();
             gbVelocidade.Show();
             gbEnergia.Hide();
-            
+            gbExemplo1.Hide();
+            gbExemplo2.Hide();
+
 
         }
 
@@ -181,12 +183,13 @@ namespace Energia_Cinética
             gbEnergia.Show();
             gbMassa.Hide();
             gbVelocidade.Hide();
-            
+            gbExemplo1.Hide();
+            gbExemplo2.Hide();
         }
 
         private void btnCredits_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Giovane Matheus Kayser Fernandes", "Credits");  //EU
+            MessageBox.Show("Giovane Matheus Kayser Fernandes\nJonathan Oliveira Dias", "Credits");  //EU
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -202,20 +205,52 @@ namespace Energia_Cinética
         private void btnNumero3_Click(object sender, EventArgs e)
         {
             Decimal Massa1, Massa2, Distancia, ForcaG, Forca;
+            Decimal i;
+            String CalculoG;
+
+            if (txtMassa1.Text == String.Empty || txtMassa2.Text == String.Empty)
+
+                MessageBox.Show("Por favor colocar a 'Massa' dos corpos", "Erro");
+
+            else
+            {
+                if (Decimal.TryParse(txtMassa1.Text, out i))
+                    if (Decimal.TryParse(txtMassa2.Text, out i))
+                    {
+                        if (Decimal.TryParse(txtDistancia.Text, out i ))
+                        {
+                            Massa1 = Convert.ToDecimal(txtMassa1.Text);
+                            Massa2 = Convert.ToDecimal(txtMassa2.Text);
+                            Distancia = Convert.ToDecimal(txtDistancia.Text);
+
+
+                            Double potencia = Math.Pow(10, 8);
+
+                            Decimal dec = Decimal.ToInt32((decimal)potencia);
+                            Forca = ((decimal)6.67) * (10 / dec);
+                            ForcaG = Forca * (Massa1 * Massa2) / (Distancia  * Distancia);
+                            txtForcaG.Text = ForcaG.ToString();
+
+                            CalculoG = Convert.ToString(lblForcaG.Text);
+                            lblForcaG.Text = ("Massa 1 = " + Massa1 + "\nMassa 2 = " + Massa2 + "\nDistancia = " + Distancia + "\n   A formula da Força Gravitacional é (G * (Massa1 *  Massa2)/ Distancia^2)\nEntão para descobrir a Força gravitacional, colocamos os dados na formula" + "\n("+ "6,67 * 10^-8" + "( *" + Massa1 + "*" + Massa2 + ") /"+ (Distancia * Distancia) + "\n   Resolveremos primeiro o que esta em parentes\n(" + Distancia * Massa1 + "+" + Massa2 + ") * 1/2" + "\n" +  Massa1 * Massa1 + " * 1/2" + "\n   Agora multiplicamos por 1/2" + "\n" + "   A energia cinética deu " + Massa2 + " J");  // Criar uma Label capaz de mostra ao usuário como é feito a equãção
+
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Por favor colocar a 'Distancia' dos corpos");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor colocar apenas números");
+                    }
+
+            }
+
 
         
-            Massa1 = Convert.ToDecimal(txtMassa1.Text);
-            Massa2 = Convert.ToDecimal(txtMassa2.Text);
-            Distancia = Convert.ToDecimal(txtDistancia.Text);
-
-           
-            Double potencia = Math.Pow(10, 8);
-
-            Decimal dec = Decimal.ToInt32((decimal)potencia);
-            Forca = ((decimal)6.67) * (10 / dec);
-            ForcaG = Forca * (Massa1 * Massa2) / Distancia;
-            txtForcaG.Text = ForcaG.ToString();
-
+            
 
         }
 
@@ -227,6 +262,29 @@ namespace Energia_Cinética
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnExemplo1_Click(object sender, EventArgs e)
+        {
+            gbEnergia.Hide();
+            gbMassa.Hide();
+            gbVelocidade.Hide();
+            gbExemplo1.Show();
+            gbExemplo2.Hide();
+        }
+
+        private void btnExemplo2_Click(object sender, EventArgs e)
+        {
+            gbEnergia.Hide();
+            gbMassa.Hide();
+            gbVelocidade.Hide();
+            gbExemplo1.Hide();
+            gbExemplo2.Show();
         }
     }
 }
